@@ -66,8 +66,6 @@ jobs:
     - run: |
        echo "Run, Build Application using script"
        #./location_of_script_within_repo/buildscript.sh
-       cd WebGoat
-       #git checkout develop
        ./mvnw clean install
        
     - name: Perform CodeQL Analysis
