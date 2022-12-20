@@ -15,13 +15,13 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install semgrep
-    semgrep ci --sarif --output=semgrep.sarif
+    semgrep ci --html --output=semgrep.html
   env:
     SEMGREP_PR_ID: $(System.PullRequest.PullRequestNumber)
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'semgrep.sarif'
+    targetPath: 'semgrep.html'
     artifactType: 'pipeline'
     artifactName: 'scan-results'
 
