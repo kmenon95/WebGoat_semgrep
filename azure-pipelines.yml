@@ -19,3 +19,8 @@ steps:
   env:
     SEMGREP_PR_ID: $(System.PullRequest.PullRequestNumber)
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'semgrep.sarif'
+
